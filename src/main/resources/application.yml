@@ -15,12 +15,3 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
-
-  security:
-    user:
-      name: test
-      password: 1234
-
-    headers:
-      frame-options: false
-
