@@ -11,10 +11,10 @@ public class MemberController {
     @GetMapping("/member/join")
     public String joinForm(){
 
-        return "join";
+        return "signup";
     }
 
-    @PostMapping("/member/save")
+    @PostMapping("/member/join")
     public String sa(){
         System.out.println("MemberController.save");
         return null;
