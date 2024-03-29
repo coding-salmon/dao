@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>signup</title>
 </head>
 <body>
 <!--action속성 : form에 작성한 데이터를 어디로 보낼지 지정-->
-<form action="/signup" method="post">
+<form action="member/signup" method="post">
 <!--    name속성 : 서버로 전송할때 변수이름의 역할-->
-    이메일: <input type="email" name="memberEmail"><br>
+    이메일: <input type="email" name="email"><br>
     비밀번호 <input type="password" name="password"><br>
     이름: <input type="text" name="name"><br>
-    휴대폰번호: <input type="text" name="phone"><br>
+    휴대폰번호: <input type="text" name="phone" oninput="check(this)"><br>
     <input type="submit" value="회원가입">
 
 </form>
 
+<script th:src="@{../static/js/signup.js}"></script>
 </body>
 </html>

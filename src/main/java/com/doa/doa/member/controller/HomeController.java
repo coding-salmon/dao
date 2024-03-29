@@ -12,13 +12,13 @@ public class HomeController {
 
     }
 
-    @GetMapping("/signup")
+    @GetMapping("member/signup")
     public String signup(){
-        return "signup"; // signup.html 페이지로 이동
+        return "member/signup"; // signup.html 페이지로 이동
 
     }
-    @GetMapping("/login")
+    @GetMapping("member/login")
     public String login(){
-        return "login"; //login.html 페이지로 이동
+        return "member/login"; //login.html 페이지로 이동
     }
 }
