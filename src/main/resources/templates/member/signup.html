@@ -6,16 +6,33 @@
 </head>
 <body>
 <!--action속성 : form에 작성한 데이터를 어디로 보낼지 지정-->
-<form action="member/signup" method="post">
+<form action="signup" method="post">
 <!--    name속성 : 서버로 전송할때 변수이름의 역할-->
-    이메일: <input type="email" name="email"><br>
-    비밀번호 <input type="password" name="password"><br>
-    이름: <input type="text" name="name"><br>
-    휴대폰번호: <input type="text" name="phone" oninput="check(this)"><br>
+    <!--오탈자검사-->
+    이름: <input type="text" name="name" placeholder="사용자 이름"><br>
+    <!--중복가능-->
+    닉네임: <input type="text" name="nicName" placeholder="다른 사람들에게 보여지는 닉네임입니다."><br>
+    <!--중복검사-->
+    이메일: <input type="email" name="email" onchange="checkEmail()"><br>
+    <div id="email-check" class="error-message" style="color: red;"></div><br>
+
+    비밀번호: <input type="password" id="password" name="password"><br>
+    <!--비멀번호확인-->
+    비밀번호 확인: <input type="password" id="confirmPassword" name="confirmPassword" oninput="checkPassword()"><br>
+    <div id="password-error" class="error-message" style="color: red;"></div>
+
+    <!--880329생년월일 주민번호뒷자리1개포함 이런식으로받기-->
+    생년월일: <input type="text" name="birth" pattern="\d{6}-\d" maxlength="8" placeholder="예: 123456-7" required>
+    <!--하이픈제거 숫자만입력가능 01012345678 11자리필수-->
+    휴대폰번호: <input type="text" id="phone" name="phone" oninput="checkError(this)"  onchange="checkPhone()"><br>
+    <!--오류 메시지 표시할 요소 추가-->
+    <div id="phone-error" class="error-message" style="color: red;"></div>
+    <div id="phone-check" class="error-message" style="color: red;"></div>
+
     <input type="submit" value="회원가입">
 
 </form>
 
-<script th:src="@{../static/js/signup.js}"></script>
+<script th:src="@{/js/signup.js}"></script>
 </body>
 </html>

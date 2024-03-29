@@ -1,14 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>index</title>
+    <title>Pic</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/index.css}">
 </head>
 <body>
+<div class="container">
 <h2>안녕하세요 인덱스입니다.</h2>
-<a href="/pic/pic">Pic 시작하기</a>
+    <div class="menu">
+<a href="pic/pic">오늘의 Pic</a>
+<a href="pic/pic">나도 pic하기</a>
+<a href="pic/pic">Pic 명예의전당</a>
+<a href="pic/pic">끝내기</a>
+    </div>
+</div>
+
+<!-- 로그인 메뉴 -->
+<div class="login-menu">
 <a href="member/signup">회원가입</a>
 <a href="member/login">로그인</a>
+</div>
 
+<script src=""></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-package com.doa.doa.member.controller;
+package com.doa.doa.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
