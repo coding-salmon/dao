@@ -21,4 +21,15 @@ public class HomeController {
     public String login(){
         return "member/login"; //login.html 페이지로 이동
     }
+
+    @GetMapping("pic/pic")
+    public String pic(){
+        return "pic/pic";
+    }
+
+    @GetMapping("pic/picMake")
+    public String picMake(){
+        return "pic/picMake";
+    }
+
 }

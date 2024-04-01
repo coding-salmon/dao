@@ -2,11 +2,12 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>signup</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
 </head>
 <body>
 <!--action속성 : form에 작성한 데이터를 어디로 보낼지 지정-->
-<form action="signup" method="post">
+<form action="/signup" method="post">
 <!--    name속성 : 서버로 전송할때 변수이름의 역할-->
     <!--오탈자검사-->
     이름: <input type="text" name="name" placeholder="사용자 이름"><br>
@@ -24,7 +25,7 @@
     <!--880329생년월일 주민번호뒷자리1개포함 이런식으로받기-->
     생년월일: <input type="text" name="birth" pattern="\d{6}-\d" maxlength="8" placeholder="예: 123456-7" required>
     <!--하이픈제거 숫자만입력가능 01012345678 11자리필수-->
-    휴대폰번호: <input type="text" id="phone" name="phone" oninput="checkError(this)"  onchange="checkPhone()"><br>
+    휴대폰번호: <input type="text" id="phone" name="phone" oninput="checkError(this)"  onchange="checkPhone()" placeholder="'-'없이 숫자만 예: 01012345678"><br>
     <!--오류 메시지 표시할 요소 추가-->
     <div id="phone-error" class="error-message" style="color: red;"></div>
     <div id="phone-check" class="error-message" style="color: red;"></div>

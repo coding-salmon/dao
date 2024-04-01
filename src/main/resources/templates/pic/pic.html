@@ -1,16 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>pic</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pic - 점심 메뉴 추리</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/pic.css}">
+
 </head>
 <body>
-<!--제목-->
-<h1>pic입니다</h1>
-<h2>오늘의 pic</h2>
-<h2>pic 올리기</h2>
-<h2>랭킹</h2>
-<h2>끝내기</h2>
+<div class="container">
+    <!-- 끝내기 -->
+    <button class="end-quiz-btn" onclick="endQuiz()">&times;</button>
+    <div class="image-container">
+    </div>
 
+
+    <div class="controls">
+        <!-- 힌트 -->
+        <button class="hint-btn" onclick="showHint()">힌트</button>
+        <!-- 다음 문제 -->
+        <button class="next-pic-btn">다음Pic</button>
+    </div>
+
+
+    <!-- 정답입력칸 -->
+    <div class="answer-section">
+    <input type="text" id="answer" placeholder="여기에 정답을 입력하세요">
+    <button onclick="checkAnswer()">제출</button>
+    </div>
+
+
+
+
+
+</div>
+<script th:src="@{/js/pic.js}"></script>
 </body>
 </html>

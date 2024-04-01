@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pic - 만들기</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.css" rel="stylesheet">
+</head>
+<body>
+    <h2>Pic 만들기</h2>
+    <form action="/picMake" method="post" enctype="multipart/form-data">
+        <div>
+            <label for="pic">1. Pic 업로드:</label>
+            <input type="file" id="pic" name="pic" accept="image/*" capture="camera" required>
+        </div>
+        <div id="imageContainer" style="display: none">
+            <img id="image">
+            <button id="zoomIn" type="button">+</button>
+            <button id="zoomOut" type="button">-</button><br>
+
+            <button id="moveRight" type="button">&larr;</button>
+            <button id="moveLeft" type="button">&rarr;</button>
+            <button id="moveUp" type="button">&darr;</button>
+            <button id="moveDown" type="button">&uarr;</button>
+
+            <label for="pic">2. Pic 자르기:</label>
+            <button id="confirm">Pic 선택</button> <!-- 확인 버튼 추가 -->
+
+
+        <div>
+            <label for="picTitle">메뉴 이름:</label>
+            <input type="text" id="picTitle" name="picTitle" required>
+            <label for="picHint">힌트:</label>
+            <input type="text" id="picTitle" name="picTitle" required>
+            <label for="pic">선택:</label>
+            <input type="text" id="picTitle" name="picTitle" required>
+            <label for="picStore">가게이름:</label>
+            <input type="text" id="picTitle" name="picTitle" required>
+        </div>
+
+        <div>
+            <button type="submit">업로드</button>
+        </div>
+        </div>
+    </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.js"></script>
+    <script th:src="@{/js/picMake.js}"></script>
+</body>
+</html>

@@ -36,6 +36,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
 //	implementation 'com.vaadin:vaadin-spring-boot-starter'
 //	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
+	implementation 'net.coobird:thumbnailator:0.4.20'
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'com.ibm.db2:jcc'
@@ -44,6 +45,7 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'io.projectreactor:reactor-test'
 	testImplementation 'org.springframework.security:spring-security-test'
+
 }
 
 //dependencyManagement {

@@ -25,12 +25,17 @@ function checkPassword(){
 function checkError() {
     const phoneInput = document.getElementById('phone');
     const phoneError = document.getElementById('phone-error');
+    // 입력값을 숫자만 포함하도록 필터링하고, 11자리로 제한
+    phoneInput.value = phoneInput.value.replace(/[^\d]/g, '').slice(0, 11);
     // 입력값이 숫자로 이루어져 있는지 검사
     if (/[^0-9]/.test(phoneInput.value)) {
         phoneError.textContent = "전화번호는 ' - ' 없이 숫자로만 입력해주세요.";
-        // 숫자 이외의 입력 제거
-        phoneInput.value = phoneInput.value.replace(/[^\d]/g, '').slice(0, 11);
-    } else {
+
+    } else if (phoneInput.value.length > 11){
+        phoneError.textContent = "전화번호는 11자리를 초과할 수 없습니다.";
+    } else if (phoneInput.value.length < 10) {
+        phoneError.textContent = "전화번호는 10자리 이상이어야 합니다."
+    }else{
         // 입력이 유효할 경우, 오류 메시지 숨기기
         phoneError.textContent = "";
 

@@ -1,0 +1,127 @@
+body, html{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+}
+
+.end-quiz-btn{
+    position: absolute;
+    top:0;
+    right:0;
+    font-size: 1.5rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+
+}
+
+.image-container{
+    width: 100%;
+    height: 80%;
+    background-color: #f0f0f0;
+}
+
+.controls{
+    position: absolute;
+    bottom: 12%;
+    width: 100%;
+    text-align: center;
+}
+
+.hint-btn, .next-pic-btn{
+    margin: 0 5px;
+}
+
+.image-container img{
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+}
+
+.answer-section {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+}
+
+
+
+.answer-section input[type="text"],
+.answer-section button{
+    height: 50px;
+    padding: 10px;
+    font-size: 1.5rem;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+img{
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+}
+
+
+button{
+    cursor: pointer;
+    padding:10px 20px;
+    margin: 10px;
+    font-size: 1.5rem;
+}
+
+/*데스크탑 환경에서 스타일*/
+
+@media (min-width: 768px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        min-height: 100vh ;
+    }
+    .image-container{
+
+        margin: 20px 0;
+        width: 100%;
+        height: 80%;
+        flex-grow: 1;
+    }
+    .controls{
+        bottom: 0;
+    }
+
+
+    .controls, .answer-section{
+        width: 80%;
+        position: relative;
+        margin: 10px 0;
+
+    }
+
+    .answer-section input[type="text"], .answer-section button{
+        width: auto;
+        margin: 10px 0;
+    }
+}
+
+@media (min-width: 350px)  {
+    .answer-section input[type="text"]{
+        width: 50%;
+
+    }
+    
+}

@@ -2,9 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
 </head>
 <body>
+    <h2>Login</h2>
+    <p th:if="${loginError}" th:text="${loginError}"></p>
+<form action="/login" method="post">
+    <div>
+        <label for="email">이메일:</label>
+        <input type="email" id="email" name="email" required placeholder="가입시 작성한 이메일주소">
+    </div>
+    <div>
+        <label for="password">비밀번호:</label>
+        <input type="password" id="password" name="password" required placeholder="비밀번호">
+    </div>
+    <div>
+        <button type="submit">로그인</button>
+    </div>
+
+</form>
+
 
 </body>
 </html>
