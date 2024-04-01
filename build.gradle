@@ -37,6 +37,7 @@ dependencies {
 //	implementation 'com.vaadin:vaadin-spring-boot-starter'
 //	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
 	implementation 'net.coobird:thumbnailator:0.4.20'
+	implementation 'com.drewnoakes:metadata-extractor:2.19.0'
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'com.ibm.db2:jcc'

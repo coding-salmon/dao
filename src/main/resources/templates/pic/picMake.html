@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pic - 만들기</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/picMake.css}">
 </head>
 <body>
     <h2>Pic 만들기</h2>
@@ -13,34 +14,56 @@
             <label for="pic">1. Pic 업로드:</label>
             <input type="file" id="pic" name="pic" accept="image/*" capture="camera" required>
         </div>
-        <div id="imageContainer" style="display: none">
+        <div id="imageContainer" style="display: none;">
             <img id="image">
             <button id="zoomIn" type="button">+</button>
             <button id="zoomOut" type="button">-</button><br>
 
             <button id="moveRight" type="button">&larr;</button>
             <button id="moveLeft" type="button">&rarr;</button>
-            <button id="moveUp" type="button">&darr;</button>
             <button id="moveDown" type="button">&uarr;</button>
+            <button id="moveUp" type="button">&darr;</button>
 
             <label for="pic">2. Pic 자르기:</label>
             <button id="confirm">Pic 선택</button> <!-- 확인 버튼 추가 -->
 
 
         <div>
-            <label for="picTitle">메뉴 이름:</label>
-            <input type="text" id="picTitle" name="picTitle" required>
-            <label for="picHint">힌트:</label>
-            <input type="text" id="picTitle" name="picTitle" required>
-            <label for="pic">선택:</label>
-            <input type="text" id="picTitle" name="picTitle" required>
-            <label for="picStore">가게이름:</label>
-            <input type="text" id="picTitle" name="picTitle" required>
+            <label for="picCategory">힌트2 분류:</label>
+            <select id="picCategory" name="picCategory" required>
+                <option value="">예: 버거</option>
+                <option value="한식">족발.보쌈</option>
+                <option value="양식">돈까스.회.일식</option>
+                <option value="일식">고기.구이</option>
+                <option value="중식">피자</option>
+                <option value="분식">찜.탕.찌개</option>
+                <option value="피자">양식</option>
+                <option value="버거">중식</option>
+                <option value="분식">아시안</option>
+                <option value="분식">치킨</option>
+                <option value="분식">백반.죽.국수</option>
+                <option value="분식">버거</option>
+                <option value="분식">분식</option>
+                <option value="분식">카페.디저트</option>
+            </select>
         </div>
+            <div>
+            <label for="picTitle">메뉴명:</label>
+            <input type="text" id="picTitle" name="picTitle" placeholder="예: 상하이 스파이스 치킨버거 콤보" required>
+            </div>
+            <div>
+            <label for="picHint">힌트1:</label>
+            <input type="text" id="picHint" name="picHint" placeholder="예: 오우~ 놀줄아는 놈인가?" required>
+            </div>
+            <div>
+            <label for="picStore">힌트3 가게명:</label>
+            <input type="text" id="picStore" name="picStore" placeholder="예: 맥도날드" required>
+            </div>
 
         <div>
             <button type="submit">업로드</button>
         </div>
+
         </div>
     </form>
 

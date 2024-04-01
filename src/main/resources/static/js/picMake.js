@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function (){
 
     // 파일을 읽고 URL로 변환한 후 크롭 준비를 완료하는 함수
     var done = function (url) {
-        input.value = ''; //input 필드 초기화
+        // input.value = ''; //input 필드 초기화
         image.src = url; //읽은 파일의 url을 img 태그의 src로 설정
         imageContainer.style.display = 'block';
 
@@ -24,8 +24,10 @@ document.addEventListener('DOMContentLoaded', function (){
         //Cropper.js 인스턴스 초기화
         cropper = new Cropper(image, {
             aspectRatio: 1 / 1,
-            viewMode:1,
+            viewMode:3,
             zoomable: true,
+            minCropBoxWidth: 100, // 최소 크롭 박스 너비를 100px로 설정
+            minCropBoxHeight: 100, // 최소 크롭 박스 높이를 100px로 설정
         });
     };
 

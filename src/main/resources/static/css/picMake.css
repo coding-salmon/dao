@@ -1,0 +1,6 @@
+#imageContainer {
+    width: 90vw; /* 뷰포트의 80% 너비 */
+    height: 60vh; /* 뷰포트의 60% 높이 */
+    margin: auto; /* 중앙 정렬 */
+    position: relative; /* 자식 요소인 이미지와 버튼들을 상대적으로 배치 */
+}
