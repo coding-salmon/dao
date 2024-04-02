@@ -1,11 +1,7 @@
 package com.doa.doa.entity;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Lob;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -25,11 +21,20 @@ public class Pic {
     private Double zoomLevel; // 사진의 줌 레벨 (선택적)
 
     @Lob
-    private byte[] imageData; // 사진 파일 데이터, 큰 데이터를 저장하기 위해 @Lob 사용
+    private byte[] originalImageData; // 사진 파일 데이터, 큰 데이터를 저장하기 위해 @Lob 사용
+
+    @Lob
+    private byte[] croppedImageData;
 
     // GPS 위치 데이터 (선택적)
     private Double latitude; // 위도
     private Double longitude; // 경도
 
+    @ManyToOne //다대일 관계 설정
+    private User user; //픽과 사용자 간의 관계
 
-}
+
+    }
+
+
+

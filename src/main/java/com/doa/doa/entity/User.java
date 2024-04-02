@@ -1,11 +1,9 @@
 package com.doa.doa.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -16,11 +14,14 @@ public class User{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String nicName;
+    private String nickName;
     private String email;
     private String password;
     private String birth;
     private String phone;
+
+    @OneToMany(mappedBy = "user")
+    private List<Pic> pics; // 사용자가 업로드한 사진 목록
 
 
 }

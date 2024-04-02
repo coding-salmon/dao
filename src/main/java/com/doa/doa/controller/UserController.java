@@ -1,7 +1,7 @@
 package com.doa.doa.controller;
 
 import com.doa.doa.entity.User;
-import com.doa.doa.service.UserService;
+import com.doa.doa.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -9,24 +9,24 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class UserController {
-    private final UserService userService;
+    private final UserServiceImpl userServiceImpl;
 
 
     @Autowired
-    public UserController(UserService userService) {
-        this.userService = userService;
+    public UserController(UserServiceImpl userServiceImpl) {
+        this.userServiceImpl = userServiceImpl;
     }
 
 
     @PostMapping("/signup")
     public String register(User user) {
-        userService.register(user);
+        userServiceImpl.register(user);
         return "redirect:/member/login"; //회원가입 성공 후 로그인 페이지로 리다이렉트
     }
 
     @PostMapping("/login")
     public String Login(String email, String password, RedirectAttributes redirectAttributes){
-        boolean loginSuccess = userService.authenticate(email,password);
+        boolean loginSuccess = userServiceImpl.authenticate(email,password);
         if(loginSuccess){
             return "redirect:/";  //로그인성공시 인덱스 페이지로 리다이렉트
         }else{

@@ -11,7 +11,7 @@
     <h2>Pic 만들기</h2>
     <form action="/picMake" method="post" enctype="multipart/form-data">
         <div>
-            <label for="pic">1. Pic 업로드:</label>
+            <label for="pic">1. Pic 불러오기:</label>
             <input type="file" id="pic" name="pic" accept="image/*" capture="camera" required>
         </div>
         <div id="imageContainer" style="display: none;">
@@ -19,16 +19,31 @@
             <button id="zoomIn" type="button">+</button>
             <button id="zoomOut" type="button">-</button><br>
 
+<!--            <input type="hidden" id="zoomLevel" name="zoomLevel">-->
+
             <button id="moveRight" type="button">&larr;</button>
             <button id="moveLeft" type="button">&rarr;</button>
             <button id="moveDown" type="button">&uarr;</button>
             <button id="moveUp" type="button">&darr;</button>
 
             <label for="pic">2. Pic 자르기:</label>
-            <button id="confirm">Pic 선택</button> <!-- 확인 버튼 추가 -->
+
+            <button id="confirm">Pic 자르기</button> <!-- 확인 버튼 추가 -->
+
+            <div id="cropStatusMessage" style="display: none;"></div>
 
 
-        <div>
+            <!--모달창 시작-->
+            <div id="croppedImageModal">
+                <div>
+                    <span id="closeModal">&times;</span>
+                    <img id="previewCroppedImage" src="">
+                </div>
+            </div>
+
+
+            <div>
+
             <label for="picCategory">힌트2 분류:</label>
             <select id="picCategory" name="picCategory" required>
                 <option value="">예: 버거</option>
@@ -61,10 +76,12 @@
             </div>
 
         <div>
-            <button type="submit">업로드</button>
+            <button type="submit">3. Pic 업로드</button>
+            <!-- 오류 메시지 표시 -->
+            <div th:if="${message}" th:text="${message}" class="message" style="display: block;"></div>
         </div>
 
-        </div>
+
     </form>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.js"></script>

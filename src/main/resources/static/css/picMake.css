@@ -4,3 +4,58 @@
     margin: auto; /* 중앙 정렬 */
     position: relative; /* 자식 요소인 이미지와 버튼들을 상대적으로 배치 */
 }
+
+/*모달 배경*/
+#croppedImageModal{
+    display: none; /*초기 상태 숨기처리*/
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+/*모달 내용 컨테이너*/
+#croppedImageModal > div {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 10px;
+}
+
+/*모달 닫기 버튼*/
+#closeModal{
+    color: #aaa;
+    float: right;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/*모달 닫기 버튼:hover */
+#closeModal:hover,
+#closeModal:focus{
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+
+}
+
+/*크롭된 이미지 미리보기 스타일*/
+#previewCroppedImage{
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.message {
+    display: none; /* 기본적으로 메시지를 숨김 */
+    color: red; /* 메시지 색상 설정 */
+    margin-top: 10px; /* 메시지와 버튼 사이의 여백 */
+}
