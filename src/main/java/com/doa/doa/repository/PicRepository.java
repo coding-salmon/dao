@@ -6,13 +6,14 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface PicRepository extends JpaRepository<Pic, Long> {
 
-    //Pic의 모든 ID를 블러오는 메서드
-    @Query("SELECT p.id FROM Pic p")
-    List<Long> findAllPicIds();
+   //랜덤으로 한 개의 pic객체를 가져오는 쿼리
+    @Query(value = "SELECT * FROM pic ORDER BY RAND() LIMIT 1", nativeQuery = true)
+    Optional<Pic> findRandom();
 
 
 }

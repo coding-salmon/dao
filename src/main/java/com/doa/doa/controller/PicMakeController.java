@@ -28,7 +28,7 @@ public class PicMakeController {
     public String handleFileUpload(@RequestParam("pic") MultipartFile originalImage,
                                    @RequestParam("croppedImage") MultipartFile croppedImage,
                                    @RequestParam("picTitle") String picTitle,
-
+                                   @RequestParam("picStore") String picStore,
                                    @RequestParam("picCategory") String picCategory,
                                    Model model){
 
@@ -39,7 +39,7 @@ public class PicMakeController {
             if (!originalImage.isEmpty() && !croppedImage.isEmpty()) {
                 logger.info("Original and cropped images are present.");
                 Pic pic = new Pic(); //pic객체 생성
-
+                pic.setStoreName(picStore);
                 pic.setTitle(picTitle);
                 pic.setCategory(picCategory);
                 pic.setOriginalImageData(originalImage.getBytes());
@@ -49,7 +49,7 @@ public class PicMakeController {
                 picService.savePic(pic); // Pic 객체 저장
                 model.addAttribute("message", "Upload successful!");
                 logger.info("Upload successful!");
-                return "redirect:/pic/picMake?message=Upload%20successful!";
+                return "redirect:/pic/picMake";
             } else {
                 // 파일이 선택되지 않았을 경우의 처리
                 logger.warn("File is not selected.");

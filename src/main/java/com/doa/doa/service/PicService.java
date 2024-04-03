@@ -2,6 +2,8 @@ package com.doa.doa.service;
 
 import com.doa.doa.entity.Pic;
 
+import java.util.Optional;
+
 public interface PicService {
 
 
@@ -11,7 +13,7 @@ public interface PicService {
      */
     Pic savePic(Pic pic); // 사진저장
 
-    Pic getRandomPic();
+    Optional<Pic> getRandomPic();
 
-    String getMessageForAllUsed();
+
 }
