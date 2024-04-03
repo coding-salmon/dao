@@ -28,7 +28,7 @@ public class PicMakeController {
     public String handleFileUpload(@RequestParam("pic") MultipartFile originalImage,
                                    @RequestParam("croppedImage") MultipartFile croppedImage,
                                    @RequestParam("picTitle") String picTitle,
-                                   @RequestParam("picHint") String picHint,
+
                                    @RequestParam("picCategory") String picCategory,
                                    Model model){
 
@@ -41,7 +41,6 @@ public class PicMakeController {
                 Pic pic = new Pic(); //pic객체 생성
 
                 pic.setTitle(picTitle);
-                pic.setHint(picHint);
                 pic.setCategory(picCategory);
                 pic.setOriginalImageData(originalImage.getBytes());
                 pic.setCroppedImageData(croppedImage.getBytes());

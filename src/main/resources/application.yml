@@ -15,11 +15,13 @@ spring:
     cache: false
 
   jpa:
-    database-platform: org.hibernate.dialect.MySQL8Dialect
+    database-platform: org.hibernate.dialect.MySQLDialect
     open-in-view: false
     show-sql: true
     hibernate:
       ddl-auto: update
+
+
   security:
     user:
       name: test
