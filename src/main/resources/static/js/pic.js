@@ -26,9 +26,7 @@ function fetchRandomPic(){
             const category = data.category;
             const storeName =data.storeName;
 
-            //<img>태그의 src 속성을 업데이트하여 이미지 표시
-            document.getElementById('randomPic').src = croppedImgElement ;
-            document.getElementById('originalImage').src = originalImageUrl;
+
 
             //다른 정보는 html 요소에 삽입하여 화면에 표시
             document.getElementById('title').innerText = title;
@@ -45,7 +43,7 @@ function checkAnswer(){
         headers: {
             'Content-Type': 'application/json',
         },
-        body:JSON.stringify({answer:useAnswer}),
+        body:JSON.stringify({answer:userAnser}),
     })
         .then(response => response.json())
         .then(data => {
